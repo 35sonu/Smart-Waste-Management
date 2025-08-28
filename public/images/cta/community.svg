@@ -1,0 +1,130 @@
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E0F6FF;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="400" fill="url(#skyGradient)"/>
+  
+  <!-- Ground -->
+  <rect x="0" y="300" width="600" height="100" fill="#90EE90"/>
+  
+  <!-- Community people -->
+  <g id="people">
+    <!-- Person 1 - Adult -->
+    <circle cx="150" cy="250" r="20" fill="#FDBCB4"/>
+    <rect x="135" y="270" width="30" height="40" fill="#4169E1" rx="5"/>
+    <rect x="125" y="280" width="15" height="30" fill="#FDBCB4" rx="7"/>
+    <rect x="160" y="280" width="15" height="30" fill="#FDBCB4" rx="7"/>
+    <rect x="140" y="310" width="10" height="20" fill="#2F2F2F" rx="5"/>
+    <rect x="150" y="310" width="10" height="20" fill="#2F2F2F" rx="5"/>
+    
+    <!-- Person 2 - Child -->
+    <circle cx="200" cy="270" r="15" fill="#D4A574"/>
+    <rect x="190" y="285" width="20" height="30" fill="#FF69B4" rx="3"/>
+    <rect x="180" y="295" width="10" height="20" fill="#D4A574" rx="5"/>
+    <rect x="210" y="295" width="10" height="20" fill="#D4A574" rx="5"/>
+    <rect x="192" y="315" width="8" height="15" fill="#FFD700" rx="4"/>
+    <rect x="200" y="315" width="8" height="15" fill="#FFD700" rx="4"/>
+    
+    <!-- Person 3 - Elderly -->
+    <circle cx="250" cy="250" r="18" fill="#F4C2A1"/>
+    <rect x="237" y="268" width="26" height="35" fill="#32CD32" rx="4"/>
+    <rect x="227" y="278" width="13" height="25" fill="#F4C2A1" rx="6"/>
+    <rect x="260" y="278" width="13" height="25" fill="#F4C2A1" rx="6"/>
+    <rect x="242" y="303" width="9" height="18" fill="#654321" rx="4"/>
+    <rect x="249" y="303" width="9" height="18" fill="#654321" rx="4"/>
+    
+    <!-- Person 4 - Teen -->
+    <circle cx="300" cy="260" r="17" fill="#E8B894"/>
+    <rect x="288" y="277" width="24" height="33" fill="#9370DB" rx="4"/>
+    <rect x="278" y="287" width="12" height="23" fill="#E8B894" rx="6"/>
+    <rect x="310" y="287" width="12" height="23" fill="#E8B894" rx="6"/>
+    <rect x="292" y="310" width="8" height="17" fill="#1E90FF" rx="4"/>
+    <rect x="300" y="310" width="8" height="17" fill="#1E90FF" rx="4"/>
+  </g>
+  
+  <!-- Recycling bins they're using -->
+  <g id="bins">
+    <rect x="380" y="270" width="40" height="50" fill="#228B22" rx="5"/>
+    <circle cx="400" cy="290" r="8" fill="white"/>
+    <path d="M395 287 L398 293 L402 293 L405 287 L402 284 L398 284 Z" fill="#228B22"/>
+    
+    <rect x="430" y="270" width="40" height="50" fill="#FFD700" rx="5"/>
+    <circle cx="450" cy="290" r="8" fill="white"/>
+    <path d="M445 287 L448 293 L452 293 L455 287 L452 284 L448 284 Z" fill="#FFD700"/>
+    
+    <rect x="480" y="270" width="40" height="50" fill="#1E90FF" rx="5"/>
+    <circle cx="500" cy="290" r="8" fill="white"/>
+    <path d="M495 287 L498 293 L502 293 L505 287 L502 284 L498 284 Z" fill="#1E90FF"/>
+  </g>
+  
+  <!-- Community garden/clean area -->
+  <g id="plants">
+    <circle cx="80" cy="280" r="15" fill="#32CD32"/>
+    <rect x="75" y="290" width="10" height="15" fill="#8B4513" rx="2"/>
+    
+    <circle cx="120" cy="285" r="12" fill="#228B22"/>
+    <rect x="116" y="295" width="8" height="12" fill="#8B4513" rx="1"/>
+    
+    <circle cx="350" cy="285" r="18" fill="#90EE90"/>
+    <rect x="344" y="300" width="12" height="18" fill="#8B4513" rx="2"/>
+    
+    <!-- Flowers -->
+    <g transform="translate(100,270)">
+      <circle cx="0" cy="0" r="3" fill="#FF69B4"/>
+      <circle cx="5" cy="-2" r="3" fill="#FFD700"/>
+      <circle cx="-3" cy="4" r="3" fill="#FF6B6B"/>
+    </g>
+  </g>
+  
+  <!-- Community sign -->
+  <g transform="translate(50,180)">
+    <rect x="0" y="0" width="100" height="50" fill="white" rx="5" stroke="#4169E1" stroke-width="2"/>
+    <text x="50" y="20" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#4169E1">CLEAN</text>
+    <text x="50" y="35" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#32CD32">COMMUNITY</text>
+  </g>
+  
+  <!-- Hearts/positive vibes -->
+  <g fill="#FF69B4" opacity="0.7">
+    <path d="M180 180 C175 175 165 175 165 185 C165 175 155 175 150 180 C155 190 165 200 165 200 C165 200 175 190 180 180" />
+    <path d="M400 150 C396 146 388 146 388 154 C388 146 380 146 376 150 C380 158 388 166 388 166 C388 166 396 158 400 150" transform="scale(0.6)"/>
+    <path d="M320 120 C317 117 311 117 311 123 C311 117 305 117 302 120 C305 127 311 133 311 133 C311 133 317 127 320 120" transform="scale(0.8)"/>
+  </g>
+  
+  <!-- Success indicators -->
+  <g transform="translate(450,100)">
+    <circle cx="0" cy="0" r="25" fill="#32CD32" opacity="0.9"/>
+    <path d="M-8 0 L-3 8 L8 -8" stroke="white" stroke-width="3" fill="none"/>
+    <text x="0" y="40" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#32CD32">SUCCESS!</text>
+  </g>
+  
+  <!-- Eco stats floating -->
+  <g transform="translate(500,200)">
+    <rect x="0" y="0" width="80" height="40" fill="white" rx="10" opacity="0.9" stroke="#32CD32" stroke-width="2"/>
+    <text x="40" y="15" text-anchor="middle" font-family="Arial" font-size="8" font-weight="bold" fill="#4169E1">+2.4M kg</text>
+    <text x="40" y="25" text-anchor="middle" font-family="Arial" font-size="8" fill="#32CD32">CO₂ Saved</text>
+    <text x="40" y="35" text-anchor="middle" font-family="Arial" font-size="6" fill="#666">Together!</text>
+  </g>
+  
+  <!-- Connected community lines -->
+  <g stroke="#4ECDC4" stroke-width="2" opacity="0.6">
+    <line x1="150" y1="250" x2="200" y2="270"/>
+    <line x1="200" y1="270" x2="250" y2="250"/>
+    <line x1="250" y1="250" x2="300" y2="260"/>
+  </g>
+  
+  <!-- Sun -->
+  <circle cx="550" cy="50" r="25" fill="#FFD700"/>
+  <g stroke="#FFD700" stroke-width="3">
+    <line x1="550" y1="10" x2="550" y2="20"/>
+    <line x1="575" y1="25" x2="585" y2="25"/>
+    <line x1="550" y1="90" x2="550" y2="80"/>
+    <line x1="525" y1="75" x2="515" y2="75"/>
+    <line x1="570" y1="30" x2="577" y2="23"/>
+    <line x1="530" y1="70" x2="523" y2="77"/>
+  </g>
+</svg>

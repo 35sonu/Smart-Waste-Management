@@ -1,0 +1,230 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="dashGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F8FAFC;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E2E8F0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F8FAFC;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="greenBar" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#22C55E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#15803D;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="blueBar" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1E40AF;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="4" flood-opacity="0.1"/>
+    </filter>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="8" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Dashboard background -->
+  <rect width="800" height="600" fill="url(#dashGrad)"/>
+  
+  <!-- Header bar -->
+  <rect x="0" y="0" width="800" height="60" fill="#FFFFFF" filter="url(#shadow)"/>
+  <rect x="0" y="58" width="800" height="2" fill="#E2E8F0"/>
+  
+  <!-- Dashboard title -->
+  <text x="40" y="25" fill="#1F2937" font-size="18" font-family="Arial" font-weight="bold">Waste Analytics Dashboard</text>
+  <text x="40" y="45" fill="#6B7280" font-size="12" font-family="Arial">Real-time insights and performance metrics</text>
+  
+  <!-- Date range selector -->
+  <rect x="600" y="15" width="120" height="30" fill="#F3F4F6" rx="6"/>
+  <text x="660" y="33" text-anchor="middle" fill="#374151" font-size="11" font-family="Arial">Last 30 Days</text>
+  
+  <!-- KPI Cards Row -->
+  <g>
+    <!-- Card 1: Total Waste Collected -->
+    <rect x="40" y="80" width="160" height="100" fill="url(#cardGrad)" rx="8" filter="url(#cardShadow)"/>
+    <rect x="40" y="80" width="160" height="4" fill="#22C55E" rx="8 8 0 0"/>
+    <text x="60" y="105" fill="#6B7280" font-size="11" font-family="Arial">Total Waste Collected</text>
+    <text x="60" y="130" fill="#1F2937" font-size="24" font-family="Arial" font-weight="bold">2,450</text>
+    <text x="120" y="130" fill="#6B7280" font-size="12" font-family="Arial">kg</text>
+    <text x="60" y="150" fill="#10B981" font-size="10" font-family="Arial">↗ +12% from last month</text>
+    <circle cx="170" cy="110" r="15" fill="#22C55E" opacity="0.1"/>
+    <rect x="163" y="103" width="14" height="14" fill="#22C55E" rx="2"/>
+    
+    <!-- Card 2: Recycling Rate -->
+    <rect x="220" y="80" width="160" height="100" fill="url(#cardGrad)" rx="8" filter="url(#cardShadow)"/>
+    <rect x="220" y="80" width="160" height="4" fill="#3B82F6" rx="8 8 0 0"/>
+    <text x="240" y="105" fill="#6B7280" font-size="11" font-family="Arial">Recycling Rate</text>
+    <text x="240" y="130" fill="#1F2937" font-size="24" font-family="Arial" font-weight="bold">67%</text>
+    <text x="240" y="150" fill="#3B82F6" font-size="10" font-family="Arial">↗ +5% from last month</text>
+    <circle cx="350" cy="110" r="15" fill="#3B82F6" opacity="0.1"/>
+    <circle cx="350" cy="110" r="8" fill="#3B82F6"/>
+    <circle cx="350" cy="110" r="5" fill="#FFFFFF"/>
+    
+    <!-- Card 3: CO2 Saved -->
+    <rect x="400" y="80" width="160" height="100" fill="url(#cardGrad)" rx="8" filter="url(#cardShadow)"/>
+    <rect x="400" y="80" width="160" height="4" fill="#10B981" rx="8 8 0 0"/>
+    <text x="420" y="105" fill="#6B7280" font-size="11" font-family="Arial">CO₂ Saved</text>
+    <text x="420" y="130" fill="#1F2937" font-size="24" font-family="Arial" font-weight="bold">1,250</text>
+    <text x="480" y="130" fill="#6B7280" font-size="12" font-family="Arial">kg</text>
+    <text x="420" y="150" fill="#10B981" font-size="10" font-family="Arial">↗ +18% from last month</text>
+    <circle cx="530" cy="110" r="15" fill="#10B981" opacity="0.1"/>
+    <path d="M525,105 L535,105 M530,100 L530,115 M535,110 L530,105 L525,110" stroke="#10B981" stroke-width="2" fill="none"/>
+    
+    <!-- Card 4: Active Users -->
+    <rect x="580" y="80" width="160" height="100" fill="url(#cardGrad)" rx="8" filter="url(#cardShadow)"/>
+    <rect x="580" y="80" width="160" height="4" fill="#F59E0B" rx="8 8 0 0"/>
+    <text x="600" y="105" fill="#6B7280" font-size="11" font-family="Arial">Active Users</text>
+    <text x="600" y="130" fill="#1F2937" font-size="24" font-family="Arial" font-weight="bold">8,945</text>
+    <text x="600" y="150" fill="#F59E0B" font-size="10" font-family="Arial">↗ +23% from last month</text>
+    <circle cx="710" cy="110" r="15" fill="#F59E0B" opacity="0.1"/>
+    <circle cx="710" cy="110" r="6" fill="#F59E0B"/>
+    <circle cx="704" cy="106" r="2" fill="#FFFFFF"/>
+    <circle cx="716" cy="106" r="2" fill="#FFFFFF"/>
+  </g>
+  
+  <!-- Main Chart Area -->
+  <rect x="40" y="200" width="460" height="280" fill="#FFFFFF" rx="8" filter="url(#cardShadow)"/>
+  <text x="60" y="225" fill="#1F2937" font-size="16" font-family="Arial" font-weight="bold">Waste Collection Trends</text>
+  <text x="60" y="245" fill="#6B7280" font-size="12" font-family="Arial">Monthly collection data over the past year</text>
+  
+  <!-- Chart Grid -->
+  <g stroke="#E5E7EB" stroke-width="0.5">
+    <line x1="80" y1="260" x2="480" y2="260"/>
+    <line x1="80" y1="310" x2="480" y2="310"/>
+    <line x1="80" y1="360" x2="480" y2="360"/>
+    <line x1="80" y1="410" x2="480" y2="410"/>
+    <line x1="80" y1="460" x2="480" y2="460"/>
+    
+    <line x1="80" y1="260" x2="80" y2="460"/>
+    <line x1="140" y1="260" x2="140" y2="460"/>
+    <line x1="200" y1="260" x2="200" y2="460"/>
+    <line x1="260" y1="260" x2="260" y2="460"/>
+    <line x1="320" y1="260" x2="320" y2="460"/>
+    <line x1="380" y1="260" x2="380" y2="460"/>
+    <line x1="440" y1="260" x2="440" y2="460"/>
+    <line x1="480" y1="260" x2="480" y2="460"/>
+  </g>
+  
+  <!-- Chart Bars -->
+  <g>
+    <!-- January -->
+    <rect x="85" y="390" width="30" height="70" fill="url(#greenBar)" rx="2"/>
+    <text x="100" y="475" text-anchor="middle" fill="#6B7280" font-size="9" font-family="Arial">Jan</text>
+    
+    <!-- February -->
+    <rect x="145" y="370" width="30" height="90" fill="url(#greenBar)" rx="2"/>
+    <text x="160" y="475" text-anchor="middle" fill="#6B7280" font-size="9" font-family="Arial">Feb</text>
+    
+    <!-- March -->
+    <rect x="205" y="340" width="30" height="120" fill="url(#greenBar)" rx="2"/>
+    <text x="220" y="475" text-anchor="middle" fill="#6B7280" font-size="9" font-family="Arial">Mar</text>
+    
+    <!-- April -->
+    <rect x="265" y="320" width="30" height="140" fill="url(#greenBar)" rx="2"/>
+    <text x="280" y="475" text-anchor="middle" fill="#6B7280" font-size="9" font-family="Arial">Apr</text>
+    
+    <!-- May -->
+    <rect x="325" y="300" width="30" height="160" fill="url(#greenBar)" rx="2"/>
+    <text x="340" y="475" text-anchor="middle" fill="#6B7280" font-size="9" font-family="Arial">May</text>
+    
+    <!-- June -->
+    <rect x="385" y="280" width="30" height="180" fill="url(#greenBar)" rx="2"/>
+    <text x="400" y="475" text-anchor="middle" fill="#6B7280" font-size="9" font-family="Arial">Jun</text>
+    
+    <!-- July (current) -->
+    <rect x="445" y="270" width="30" height="190" fill="#34D399" rx="2"/>
+    <text x="460" y="475" text-anchor="middle" fill="#059669" font-size="9" font-family="Arial" font-weight="bold">Jul</text>
+  </g>
+  
+  <!-- Y-axis labels -->
+  <g fill="#6B7280" font-size="9" font-family="Arial">
+    <text x="75" y="265" text-anchor="end">2.5k</text>
+    <text x="75" y="315" text-anchor="end">2.0k</text>
+    <text x="75" y="365" text-anchor="end">1.5k</text>
+    <text x="75" y="415" text-anchor="end">1.0k</text>
+    <text x="75" y="465" text-anchor="end">0.5k</text>
+  </g>
+  
+  <!-- Pie Chart - Waste Composition -->
+  <g transform="translate(580, 300)">
+    <rect x="-40" y="-40" width="200" height="220" fill="#FFFFFF" rx="8" filter="url(#cardShadow)"/>
+    <text x="-20" y="-15" fill="#1F2937" font-size="16" font-family="Arial" font-weight="bold">Waste Composition</text>
+    <text x="-20" y="0" fill="#6B7280" font-size="11" font-family="Arial">Current month breakdown</text>
+    
+    <!-- Pie chart slices -->
+    <g transform="translate(60, 60)">
+      <!-- Organic 45% -->
+      <path d="M0,0 L0,-40 A40,40 0 0,1 28.28,-28.28 Z" fill="#22C55E"/>
+      <!-- Recyclable 30% -->
+      <path d="M0,0 L28.28,-28.28 A40,40 0 0,1 38.04,15.45 Z" fill="#3B82F6"/>
+      <!-- General 20% -->
+      <path d="M0,0 L38.04,15.45 A40,40 0 0,1 12.36,38.04 Z" fill="#F59E0B"/>
+      <!-- Hazardous 5% -->
+      <path d="M0,0 L12.36,38.04 A40,40 0 0,1 0,40 L0,0 Z" fill="#EF4444"/>
+      <!-- Back to start -->
+      <path d="M0,0 L0,40 A40,40 0 0,1 0,-40 Z" fill="#22C55E" opacity="0"/>
+    </g>
+    
+    <!-- Legend -->
+    <g transform="translate(-20, 130)">
+      <circle cx="5" cy="0" r="3" fill="#22C55E"/>
+      <text x="15" y="4" fill="#374151" font-size="10" font-family="Arial">Organic (45%)</text>
+      
+      <circle cx="5" cy="18" r="3" fill="#3B82F6"/>
+      <text x="15" y="22" fill="#374151" font-size="10" font-family="Arial">Recyclable (30%)</text>
+      
+      <circle cx="5" cy="36" r="3" fill="#F59E0B"/>
+      <text x="15" y="40" fill="#374151" font-size="10" font-family="Arial">General (20%)</text>
+      
+      <circle cx="5" cy="54" r="3" fill="#EF4444"/>
+      <text x="15" y="58" fill="#374151" font-size="10" font-family="Arial">Hazardous (5%)</text>
+    </g>
+  </g>
+  
+  <!-- Collection Efficiency Gauge -->
+  <g transform="translate(120, 520)">
+    <rect x="-60" y="-30" width="280" height="80" fill="#FFFFFF" rx="8" filter="url(#cardShadow)"/>
+    <text x="-40" y="-10" fill="#1F2937" font-size="14" font-family="Arial" font-weight="bold">Collection Efficiency</text>
+    
+    <!-- Gauge background -->
+    <path d="M0,20 A30,30 0 0,1 42.43,-12.43" stroke="#E5E7EB" stroke-width="8" fill="none"/>
+    <path d="M42.43,-12.43 A30,30 0 0,1 0,-30" stroke="#E5E7EB" stroke-width="8" fill="none"/>
+    <path d="M0,-30 A30,30 0 0,1 -42.43,-12.43" stroke="#E5E7EB" stroke-width="8" fill="none"/>
+    <path d="M-42.43,-12.43 A30,30 0 0,1 0,20" stroke="#E5E7EB" stroke-width="8" fill="none"/>
+    
+    <!-- Gauge fill (94% = 338° out of 360°) -->
+    <path d="M0,30 A30,30 0 0,1 42.43,-12.43" stroke="#22C55E" stroke-width="8" fill="none"/>
+    <path d="M42.43,-12.43 A30,30 0 0,1 0,-30" stroke="#22C55E" stroke-width="8" fill="none"/>
+    <path d="M0,-30 A30,30 0 0,1 -30,16" stroke="#22C55E" stroke-width="8" fill="none"/>
+    
+    <!-- Center text -->
+    <text x="0" y="-5" text-anchor="middle" fill="#1F2937" font-size="18" font-family="Arial" font-weight="bold">94%</text>
+    <text x="0" y="10" text-anchor="middle" fill="#6B7280" font-size="10" font-family="Arial">Efficiency Rate</text>
+    
+    <!-- Efficiency indicators -->
+    <g transform="translate(80, -10)">
+      <text x="0" y="0" fill="#374151" font-size="10" font-family="Arial" font-weight="bold">Performance</text>
+      <text x="0" y="15" fill="#10B981" font-size="9" font-family="Arial">Excellent</text>
+      <text x="0" y="30" fill="#6B7280" font-size="8" font-family="Arial">Target: 90%</text>
+    </g>
+  </g>
+  
+  <!-- Real-time alerts -->
+  <g transform="translate(500, 520)">
+    <rect x="0" y="-30" width="240" height="80" fill="#FFFFFF" rx="8" filter="url(#cardShadow)"/>
+    <rect x="0" y="-30" width="240" height="4" fill="#EF4444" rx="8 8 0 0"/>
+    <text x="20" y="-10" fill="#1F2937" font-size="14" font-family="Arial" font-weight="bold">Live Alerts</text>
+    
+    <g transform="translate(20, 5)">
+      <circle cx="5" cy="5" r="3" fill="#22C55E"/>
+      <text x="15" y="9" fill="#374151" font-size="9" font-family="Arial">Route 3 completed (+2min early)</text>
+      
+      <circle cx="5" cy="20" r="3" fill="#F59E0B"/>
+      <text x="15" y="24" fill="#374151" font-size="9" font-family="Arial">Bin #47 at 85% capacity</text>
+      
+      <circle cx="5" cy="35" r="3" fill="#EF4444"/>
+      <text x="15" y="39" fill="#374151" font-size="9" font-family="Arial">Truck #2 maintenance due</text>
+    </g>
+  </g>
+</svg>

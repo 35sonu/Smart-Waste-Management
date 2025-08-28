@@ -1,0 +1,194 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FEF3C7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F59E0B;stop-opacity:0.3" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FCD34D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F59E0B;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#22C55E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#15803D;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bgGrad)"/>
+  
+  <!-- Main trophy/reward -->
+  <g transform="translate(400, 150)">
+    <!-- Trophy base -->
+    <ellipse cx="0" cy="120" rx="40" ry="15" fill="#D97706" filter="url(#shadow)"/>
+    <rect x="-30" y="105" width="60" height="30" fill="url(#goldGrad)" rx="5"/>
+    
+    <!-- Trophy stem -->
+    <rect x="-8" y="80" width="16" height="40" fill="url(#goldGrad)"/>
+    
+    <!-- Trophy cup -->
+    <ellipse cx="0" cy="40" rx="35" ry="25" fill="url(#goldGrad)" filter="url(#glow)"/>
+    <ellipse cx="0" cy="35" rx="28" ry="20" fill="#FCD34D"/>
+    
+    <!-- Trophy handles -->
+    <ellipse cx="-42" cy="45" rx="8" ry="15" fill="none" stroke="url(#goldGrad)" stroke-width="4"/>
+    <ellipse cx="42" cy="45" rx="8" ry="15" fill="none" stroke="url(#goldGrad)" stroke-width="4"/>
+    
+    <!-- Star on trophy -->
+    <path d="M0,25 L6,35 L18,35 L9,43 L12,55 L0,48 L-12,55 L-9,43 L-18,35 L-6,35 Z" fill="#FFFFFF" opacity="0.9"/>
+    
+    <!-- Trophy text -->
+    <text x="0" y="140" text-anchor="middle" fill="#92400E" font-size="14" font-family="Arial" font-weight="bold">ECO CHAMPION</text>
+  </g>
+  
+  <!-- Points counter -->
+  <g transform="translate(150, 80)">
+    <rect x="0" y="0" width="150" height="80" fill="#FFFFFF" rx="12" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="150" height="25" fill="url(#greenGrad)" rx="12 12 0 0"/>
+    <text x="75" y="17" text-anchor="middle" fill="#FFFFFF" font-size="12" font-family="Arial" font-weight="bold">Your Points</text>
+    
+    <!-- Points display -->
+    <text x="75" y="45" text-anchor="middle" fill="#059669" font-size="28" font-family="Arial" font-weight="bold">2,450</text>
+    <text x="75" y="65" text-anchor="middle" fill="#6B7280" font-size="11" font-family="Arial">Eco Points Earned</text>
+  </g>
+  
+  <!-- Badges/achievements -->
+  <g transform="translate(550, 80)">
+    <rect x="0" y="0" width="180" height="140" fill="#FFFFFF" rx="12" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="180" height="25" fill="#8B5CF6" rx="12 12 0 0"/>
+    <text x="90" y="17" text-anchor="middle" fill="#FFFFFF" font-size="12" font-family="Arial" font-weight="bold">Achievements</text>
+    
+    <!-- Badge 1 - Recycling Hero -->
+    <g transform="translate(20, 35)">
+      <circle cx="15" cy="15" r="12" fill="url(#goldGrad)" filter="url(#glow)"/>
+      <path d="M15,8 L17,12 L22,12 L18,15 L20,20 L15,17 L10,20 L12,15 L8,12 L13,12 Z" fill="#FFFFFF"/>
+      <text x="35" y="12" fill="#374151" font-size="10" font-family="Arial" font-weight="bold">Recycling Hero</text>
+      <text x="35" y="22" fill="#6B7280" font-size="8" font-family="Arial">100+ items recycled</text>
+    </g>
+    
+    <!-- Badge 2 - Green Warrior -->
+    <g transform="translate(20, 65)">
+      <circle cx="15" cy="15" r="12" fill="#22C55E" filter="url(#glow)"/>
+      <rect x="10" y="10" width="10" height="10" fill="#FFFFFF" rx="2"/>
+      <text x="35" y="12" fill="#374151" font-size="10" font-family="Arial" font-weight="bold">Green Warrior</text>
+      <text x="35" y="22" fill="#6B7280" font-size="8" font-family="Arial">30 days streak</text>
+    </g>
+    
+    <!-- Badge 3 - Eco Leader -->
+    <g transform="translate(20, 95)">
+      <circle cx="15" cy="15" r="12" fill="#3B82F6" filter="url(#glow)"/>
+      <polygon points="15,8 17,12 22,12 18,15 20,20 15,17 10,20 12,15 8,12 13,12" fill="#FFFFFF"/>
+      <text x="35" y="12" fill="#374151" font-size="10" font-family="Arial" font-weight="bold">Eco Leader</text>
+      <text x="35" y="22" fill="#6B7280" font-size="8" font-family="Arial">Referred 5 friends</text>
+    </g>
+  </g>
+  
+  <!-- Leaderboard -->
+  <g transform="translate(100, 300)">
+    <rect x="0" y="0" width="250" height="200" fill="#FFFFFF" rx="12" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="250" height="30" fill="#F59E0B" rx="12 12 0 0"/>
+    <text x="125" y="20" text-anchor="middle" fill="#FFFFFF" font-size="14" font-family="Arial" font-weight="bold">Leaderboard</text>
+    
+    <!-- Rank 1 -->
+    <g transform="translate(20, 45)">
+      <circle cx="15" cy="15" r="12" fill="url(#goldGrad)"/>
+      <text x="15" y="19" text-anchor="middle" fill="#FFFFFF" font-size="10" font-family="Arial" font-weight="bold">1</text>
+      <text x="35" y="12" fill="#374151" font-size="11" font-family="Arial" font-weight="bold">Priya Sharma</text>
+      <text x="35" y="22" fill="#6B7280" font-size="9" font-family="Arial">3,250 points</text>
+      <rect x="180" y="8" width="40" height="14" fill="#FCD34D" rx="7"/>
+      <text x="200" y="17" text-anchor="middle" fill="#92400E" font-size="8" font-family="Arial" font-weight="bold">You!</text>
+    </g>
+    
+    <!-- Rank 2 -->
+    <g transform="translate(20, 75)">
+      <circle cx="15" cy="15" r="12" fill="#E5E7EB"/>
+      <text x="15" y="19" text-anchor="middle" fill="#374151" font-size="10" font-family="Arial" font-weight="bold">2</text>
+      <text x="35" y="12" fill="#374151" font-size="11" font-family="Arial">Rahul Kumar</text>
+      <text x="35" y="22" fill="#6B7280" font-size="9" font-family="Arial">2,890 points</text>
+    </g>
+    
+    <!-- Rank 3 -->
+    <g transform="translate(20, 105)">
+      <circle cx="15" cy="15" r="12" fill="#CD7C2F"/>
+      <text x="15" y="19" text-anchor="middle" fill="#FFFFFF" font-size="10" font-family="Arial" font-weight="bold">3</text>
+      <text x="35" y="12" fill="#374151" font-size="11" font-family="Arial">Anita Singh</text>
+      <text x="35" y="22" fill="#6B7280" font-size="9" font-family="Arial">2,650 points</text>
+    </g>
+    
+    <!-- Rank 4 -->
+    <g transform="translate(20, 135)">
+      <circle cx="15" cy="15" r="12" fill="#9CA3AF"/>
+      <text x="15" y="19" text-anchor="middle" fill="#FFFFFF" font-size="10" font-family="Arial" font-weight="bold">4</text>
+      <text x="35" y="12" fill="#374151" font-size="11" font-family="Arial">Amit Patel</text>
+      <text x="35" y="22" fill="#6B7280" font-size="9" font-family="Arial">2,420 points</text>
+    </g>
+    
+    <!-- Rank 5 -->
+    <g transform="translate(20, 165)">
+      <circle cx="15" cy="15" r="12" fill="#9CA3AF"/>
+      <text x="15" y="19" text-anchor="middle" fill="#FFFFFF" font-size="10" font-family="Arial" font-weight="bold">5</text>
+      <text x="35" y="12" fill="#374151" font-size="11" font-family="Arial">Neha Gupta</text>
+      <text x="35" y="22" fill="#6B7280" font-size="9" font-family="Arial">2,180 points</text>
+    </g>
+  </g>
+  
+  <!-- Rewards available -->
+  <g transform="translate(400, 320)">
+    <rect x="0" y="0" width="280" height="180" fill="#FFFFFF" rx="12" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="280" height="30" fill="#EC4899" rx="12 12 0 0"/>
+    <text x="140" y="20" text-anchor="middle" fill="#FFFFFF" font-size="14" font-family="Arial" font-weight="bold">Available Rewards</text>
+    
+    <!-- Reward 1 -->
+    <g transform="translate(20, 45)">
+      <rect x="0" y="0" width="70" height="50" fill="#F3F4F6" rx="8"/>
+      <circle cx="35" cy="25" r="15" fill="#10B981"/>
+      <text x="35" y="30" text-anchor="middle" fill="#FFFFFF" font-size="12" font-family="Arial">₹50</text>
+      <text x="80" y="15" fill="#374151" font-size="11" font-family="Arial" font-weight="bold">Cash Voucher</text>
+      <text x="80" y="28" fill="#6B7280" font-size="9" font-family="Arial">Redeem for ₹50 cash</text>
+      <text x="80" y="40" fill="#F59E0B" font-size="10" font-family="Arial" font-weight="bold">500 points</text>
+    </g>
+    
+    <!-- Reward 2 -->
+    <g transform="translate(20, 105)">
+      <rect x="0" y="0" width="70" height="50" fill="#F3F4F6" rx="8"/>
+      <rect x="15" y="15" width="40" height="20" fill="#3B82F6" rx="4"/>
+      <text x="35" y="28" text-anchor="middle" fill="#FFFFFF" font-size="8" font-family="Arial">GIFT</text>
+      <text x="80" y="15" fill="#374151" font-size="11" font-family="Arial" font-weight="bold">Amazon Voucher</text>
+      <text x="80" y="28" fill="#6B7280" font-size="9" font-family="Arial">₹100 Amazon gift card</text>
+      <text x="80" y="40" fill="#F59E0B" font-size="10" font-family="Arial" font-weight="bold">1,000 points</text>
+    </g>
+    
+    <!-- Progress to next reward -->
+    <g transform="translate(20, 165)">
+      <text x="0" y="0" fill="#6B7280" font-size="10" font-family="Arial">Next reward in:</text>
+      <text x="160" y="0" fill="#059669" font-size="10" font-family="Arial" font-weight="bold">50 points</text>
+    </g>
+  </g>
+  
+  <!-- Floating stars/sparkles -->
+  <g opacity="0.6">
+    <path d="M200,200 L202,205 L207,205 L203,208 L205,213 L200,210 L195,213 L197,208 L193,205 L198,205 Z" fill="#FCD34D"/>
+    <path d="M650,150 L652,155 L657,155 L653,158 L655,163 L650,160 L645,163 L647,158 L643,155 L648,155 Z" fill="#22C55E"/>
+    <path d="M100,450 L102,455 L107,455 L103,458 L105,463 L100,460 L95,463 L97,458 L93,455 L98,455 Z" fill="#3B82F6"/>
+    <circle cx="750" cy="300" r="3" fill="#F59E0B" opacity="0.8"/>
+    <circle cx="50" cy="250" r="2" fill="#EC4899" opacity="0.7"/>
+  </g>
+  
+  <!-- Gamification progress bar -->
+  <g transform="translate(250, 550)">
+    <rect x="0" y="0" width="300" height="30" fill="#FFFFFF" rx="15" filter="url(#shadow)"/>
+    <rect x="5" y="5" width="290" height="20" fill="#E5E7EB" rx="10"/>
+    <rect x="5" y="5" width="220" height="20" fill="url(#greenGrad)" rx="10"/>
+    <text x="150" y="18" text-anchor="middle" fill="#FFFFFF" font-size="11" font-family="Arial" font-weight="bold">Level 8 - Eco Expert</text>
+  </g>
+</svg>

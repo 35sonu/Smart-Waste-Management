@@ -1,5 +1,6 @@
 import type { Route } from "./+types/home";
 import { motion } from "framer-motion";
+import SmartImage from "../components/SmartImage";
 import { 
   Leaf, 
   Calendar, 
@@ -27,42 +28,54 @@ const features = [
     description: "Schedule waste collection at your convenience, reducing unnecessary pickups.",
     icon: Calendar,
     href: "/schedule",
-    color: "bg-green-500"
+    color: "bg-green-500",
+    image: "/images/features/smart-scheduling.svg",
+    imageAlt: "Smart scheduling interface showing calendar with pickup times and mobile notifications"
   },
   {
     name: "AI Waste Sorting",
     description: "Identify recyclable, organic, and non-recyclable items through image recognition.",
     icon: Trash2,
     href: "/sort",
-    color: "bg-blue-500"
+    color: "bg-blue-500",
+    image: "/images/features/ai-sorting.svg",
+    imageAlt: "AI-powered waste classification system analyzing plastic, organic and metal items"
   },
   {
     name: "Recycling Hubs",
     description: "Locate nearby recycling centers and drop-off points in your area.",
     icon: MapPin,
     href: "/recycling-hubs",
-    color: "bg-purple-500"
+    color: "bg-purple-500",
+    image: "/images/features/recycling-hubs.svg",
+    imageAlt: "Map showing nearby recycling centers and drop-off locations"
   },
   {
     name: "Route Optimization",
     description: "Optimize collection routes to reduce fuel consumption and emissions.",
     icon: RouteIcon,
     href: "/route-optimizer",
-    color: "bg-orange-500"
+    color: "bg-orange-500",
+    image: "/images/features/route-optimization.svg",
+    imageAlt: "Optimized collection routes displayed on map with waste trucks and efficiency metrics"
   },
   {
     name: "Eco Rewards",
     description: "Earn points and badges for proper waste disposal and recycling habits.",
     icon: Trophy,
     href: "/rewards",
-    color: "bg-yellow-500"
+    color: "bg-yellow-500",
+    image: "/images/features/eco-rewards.svg",
+    imageAlt: "Gamification rewards system showing points, badges and leaderboard"
   },
   {
     name: "Analytics Dashboard",
     description: "Monitor waste generation, collection efficiency, and recycling rates.",
     icon: BarChart3,
     href: "/dashboard",
-    color: "bg-red-500"
+    color: "bg-red-500",
+    image: "/images/features/analytics.svg",
+    imageAlt: "Analytics dashboard with charts showing waste metrics and environmental impact"
   },
 ];
 
@@ -76,15 +89,34 @@ const stats = [
 export default function Home() {
   return (
     <div className="animate-fade-in">
+      {/* Skip to main content link for screen readers */}
+      <a 
+        href="#main-content" 
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-green-600 text-white px-4 py-2 rounded-md z-50 font-medium"
+      >
+        Skip to main content
+      </a>
       {/* Hero Section */}
-      <motion.div 
+      <motion.section 
+        id="main-content"
+        aria-labelledby="hero-heading"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="relative overflow-hidden mb-20"
       >
-        <div className="relative bg-gradient-to-br from-green-50 via-emerald-50 to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 rounded-3xl p-8 md:p-16 lg:p-20">
-          {/* Background decoration */}
+        <div className="relative bg-gradient-to-br from-green-50 via-emerald-50 to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 rounded-3xl p-8 md:p-16 lg:p-20 overflow-hidden">
+          {/* Hero Background Image */}
+          <div className="absolute inset-0 rounded-3xl overflow-hidden">
+            <SmartImage 
+              src="/images/hero/hero-recycling.svg" 
+              alt="Smart waste management community with recycling bins, people sorting waste, and eco-friendly technology" 
+              className="absolute inset-0 w-full h-full object-cover opacity-20 dark:opacity-15"
+              priority={true}
+            />
+          </div>
+          
+          {/* Background decoration layers */}
           <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-blue-500/5 dark:from-green-400/10 dark:to-blue-400/10"></div>
           <div className="absolute top-4 right-4 w-32 h-32 bg-gradient-to-br from-green-400/20 to-blue-400/20 rounded-full blur-xl animate-pulse-slow"></div>
           <div className="absolute bottom-4 left-4 w-24 h-24 bg-gradient-to-br from-emerald-400/20 to-cyan-400/20 rounded-full blur-lg animate-float"></div>
@@ -100,6 +132,7 @@ export default function Home() {
             </motion.div>
             
             <motion.h1 
+              id="hero-heading"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
@@ -170,10 +203,11 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
-      </motion.div>
+      </motion.section>
 
       {/* Stats Section */}
-      <motion.div
+      <motion.section
+        aria-labelledby="stats-heading"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.2, duration: 0.8 }}
@@ -181,6 +215,7 @@ export default function Home() {
       >
         <div className="text-center mb-12">
           <motion.h2 
+            id="stats-heading"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.3, duration: 0.6 }}
@@ -264,10 +299,11 @@ export default function Home() {
             );
           })}
         </div>
-      </motion.div>
+      </motion.section>
 
       {/* Features Grid */}
-      <motion.div
+      <motion.section
+        aria-labelledby="features-heading"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2.5, duration: 0.8 }}
@@ -275,6 +311,7 @@ export default function Home() {
       >
         <div className="text-center mb-16">
           <motion.h2 
+            id="features-heading"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 2.6, duration: 0.6 }}
@@ -332,6 +369,18 @@ export default function Home() {
                 {/* Decorative corner accent */}
                 <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-gray-100 dark:from-gray-700 to-transparent opacity-50"></div>
                 
+                {/* Feature Image - Hidden on mobile, shown on md+ */}
+                <div className="hidden md:block relative z-10 mb-6">
+                  <div className="relative h-48 rounded-xl overflow-hidden">
+                    <SmartImage 
+                      src={feature.image} 
+                      alt={feature.imageAlt} 
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                  </div>
+                </div>
+                
                 {/* Icon container */}
                 <motion.div
                   whileHover={{ 
@@ -341,7 +390,7 @@ export default function Home() {
                   }}
                   className="relative z-10"
                 >
-                  <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${gradient} mb-6 shadow-lg ring-4 ring-white/10 dark:ring-gray-800/20 group-hover:ring-8 group-hover:shadow-2xl transition-all duration-300`}>
+                  <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${gradient} mb-6 shadow-lg ring-4 ring-white/10 dark:ring-gray-800/20 group-hover:ring-8 group-hover:shadow-2xl transition-all duration-300 md:mb-4`}>
                     <Icon className="h-8 w-8 text-white" />
                   </div>
                 </motion.div>
@@ -381,10 +430,11 @@ export default function Home() {
             );
           })}
         </div>
-      </motion.div>
+      </motion.section>
 
       {/* Call-to-Action Section */}
-      <motion.div
+      <motion.section
+        aria-labelledby="cta-heading"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 3.2, duration: 0.8 }}
@@ -396,7 +446,19 @@ export default function Home() {
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-48 h-48 bg-blue-500/20 rounded-full blur-2xl"></div>
           
-          <div className="relative mx-auto max-w-4xl text-center text-white">
+          {/* Community Background Image - Large screens */}
+          <div className="absolute inset-0 hidden lg:flex items-center justify-start">
+            <div className="w-1/3 h-full">
+              <SmartImage 
+                src="/images/cta/community.svg" 
+                alt="Diverse community members working together on recycling and waste management initiatives" 
+                className="w-full h-full object-cover opacity-10 dark:opacity-8" 
+              />
+            </div>
+          </div>
+          
+          <div className="relative mx-auto max-w-4xl lg:flex lg:items-center lg:justify-end lg:text-left lg:max-w-6xl">
+            <div className="lg:w-2/3 lg:pl-8 text-center lg:text-left text-white">
             {/* Badge */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -410,6 +472,7 @@ export default function Home() {
             
             {/* Main heading */}
             <motion.h2 
+              id="cta-heading"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 3.4, duration: 0.6 }}
@@ -526,9 +589,10 @@ export default function Home() {
                 ✓ Free to start  ✓ No setup fees  ✓ 24/7 support  ✓ Cancel anytime
               </p>
             </motion.div>
+            </div>
           </div>
         </div>
-      </motion.div>
+      </motion.section>
     </div>
   );
 }

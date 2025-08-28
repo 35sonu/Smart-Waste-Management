@@ -1,0 +1,113 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E0F6FF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="hubGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky background -->
+  <rect width="800" height="400" fill="url(#skyGrad)"/>
+  
+  <!-- Ground -->
+  <rect x="0" y="400" width="800" height="200" fill="#22C55E" opacity="0.3"/>
+  
+  <!-- Buildings in background -->
+  <rect x="50" y="250" width="80" height="150" fill="#6B7280" opacity="0.6"/>
+  <rect x="150" y="220" width="60" height="180" fill="#6B7280" opacity="0.5"/>
+  <rect x="680" y="200" width="90" height="200" fill="#6B7280" opacity="0.6"/>
+  
+  <!-- Main recycling hub building -->
+  <rect x="300" y="150" width="200" height="250" fill="url(#hubGrad)" rx="10"/>
+  
+  <!-- Hub roof -->
+  <polygon points="290,150 510,150 400,100" fill="#059669"/>
+  
+  <!-- Windows -->
+  <rect x="320" y="180" width="30" height="40" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="370" y="180" width="30" height="40" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="420" y="180" width="30" height="40" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="470" y="180" width="30" height="40" fill="#FFFFFF" opacity="0.8"/>
+  
+  <!-- Door -->
+  <rect x="380" y="340" width="40" height="60" fill="#065F46"/>
+  
+  <!-- Recycling symbol on building -->
+  <circle cx="400" cy="280" r="25" fill="#FFFFFF" opacity="0.9"/>
+  <path d="M385,270 L415,270 L400,290 Z M385,290 L415,290 L400,270 Z" fill="#059669"/>
+  
+  <!-- Map markers showing different hubs -->
+  <g>
+    <!-- Hub 1 marker -->
+    <circle cx="200" cy="350" r="8" fill="#EF4444"/>
+    <circle cx="200" cy="350" r="4" fill="#FFFFFF"/>
+    
+    <!-- Hub 2 marker -->
+    <circle cx="600" cy="320" r="8" fill="#EF4444"/>
+    <circle cx="600" cy="320" r="4" fill="#FFFFFF"/>
+    
+    <!-- Hub 3 marker -->
+    <circle cx="450" cy="450" r="8" fill="#EF4444"/>
+    <circle cx="450" cy="450" r="4" fill="#FFFFFF"/>
+  </g>
+  
+  <!-- Recycling bins around the hub -->
+  <g>
+    <!-- Blue bin -->
+    <rect x="250" y="350" width="25" height="40" fill="#3B82F6" rx="3"/>
+    <circle cx="262.5" cy="340" r="8" fill="#1D4ED8"/>
+    
+    <!-- Green bin -->
+    <rect x="520" y="360" width="25" height="40" fill="#22C55E" rx="3"/>
+    <circle cx="532.5" cy="350" r="8" fill="#15803D"/>
+    
+    <!-- Yellow bin -->
+    <rect x="180" y="380" width="25" height="40" fill="#F59E0B" rx="3"/>
+    <circle cx="192.5" cy="370" r="8" fill="#D97706"/>
+  </g>
+  
+  <!-- People at recycling hub -->
+  <g>
+    <!-- Person 1 -->
+    <circle cx="350" cy="380" r="8" fill="#F3E8FF"/>
+    <rect x="345" y="388" width="10" height="20" fill="#8B5CF6" rx="2"/>
+    
+    <!-- Person 2 -->
+    <circle cx="430" cy="390" r="8" fill="#FEF3C7"/>
+    <rect x="425" y="398" width="10" height="20" fill="#F59E0B" rx="2"/>
+  </g>
+  
+  <!-- Road/path -->
+  <rect x="0" y="450" width="800" height="40" fill="#64748B" opacity="0.6"/>
+  <rect x="0" y="465" width="800" height="4" fill="#FFFFFF" opacity="0.8"/>
+  
+  <!-- Direction arrows/signs -->
+  <g>
+    <!-- Arrow sign -->
+    <rect x="650" y="380" width="60" height="30" fill="#FFFFFF" stroke="#059669" stroke-width="2"/>
+    <text x="680" y="400" text-anchor="middle" fill="#059669" font-size="12" font-family="Arial">HUB</text>
+    <polygon points="720,395 730,390 730,400" fill="#059669"/>
+  </g>
+  
+  <!-- Trees for environment -->
+  <g>
+    <!-- Tree 1 -->
+    <rect x="95" y="380" width="8" height="30" fill="#8B4513"/>
+    <circle cx="99" cy="375" r="15" fill="#22C55E"/>
+    
+    <!-- Tree 2 -->
+    <rect x="720" y="370" width="8" height="40" fill="#8B4513"/>
+    <circle cx="724" cy="365" r="18" fill="#22C55E"/>
+  </g>
+  
+  <!-- GPS/Navigation element -->
+  <g>
+    <circle cx="100" cy="100" r="30" fill="#FFFFFF" opacity="0.9" stroke="#059669" stroke-width="3"/>
+    <circle cx="100" cy="100" r="8" fill="#EF4444"/>
+    <path d="M85,85 L115,85 M100,70 L100,130 M90,90 L110,110 M110,90 L90,110" stroke="#059669" stroke-width="2" opacity="0.7"/>
+  </g>
+</svg>

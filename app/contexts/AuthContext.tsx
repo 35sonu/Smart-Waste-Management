@@ -1,127 +1,145 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-
-interface User {
-  id: string;
-  name: string;
-  email: string;
-  phone: string;
-  city: string;
-  avatar: string;
-}
+import { authService } from '../services/authService';
+import type { User } from '../services/authService';
 
 interface AuthContextType {
   user: User | null;
-  login: (credentials: LoginCredentials) => Promise<void>;
-  register: (data: RegisterData) => Promise<void>;
-  logout: () => void;
+  signInWithGoogle: () => Promise<void>;
+  logout: () => Promise<void>;
   isAuthenticated: boolean;
   isLoading: boolean;
-}
-
-interface LoginCredentials {
-  phone: string;
-  otp?: string;
-}
-
-interface RegisterData {
-  name: string;
-  email: string;
-  phone: string;
-  city: string;
+  error: string | null;
+  // Helper functions for UI components
+  getUserDisplayName: () => string;
+  getUserInitials: () => string;
+  getUserAvatar: () => string | null;
+  // Profile management
+  updateProfile: (updates: Partial<User>) => Promise<void>;
+  addEcoPoints: (points: number) => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-// Mock user data for demonstration
-const mockUser: User = {
-  id: '1',
-  name: 'Priya Sharma',
-  email: 'priya.sharma@example.com',
-  phone: '+91 98765 43210',
-  city: 'Mumbai',
-  avatar: '👩‍🦱'
-};
-
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  // Initialize auth state from localStorage
+  // Initialize auth state and listen for changes
   useEffect(() => {
     console.log('AuthProvider initializing...');
-    if (typeof window === 'undefined') {
-      console.log('Window is undefined, skipping localStorage check');
-      return;
-    }
+    setIsLoading(true);
     
-    const savedUser = localStorage.getItem('user');
-    console.log('Saved user from localStorage:', savedUser);
-    if (savedUser) {
-      const parsedUser = JSON.parse(savedUser);
-      console.log('Parsed user:', parsedUser);
-      setUser(parsedUser);
+    // Listen for auth state changes
+    const unsubscribe = authService.onAuthStateChange((user) => {
+      console.log('Auth state changed:', user);
+      setUser(user);
+      setIsLoading(false);
+    });
+
+    // Get initial user state
+    const currentUser = authService.getCurrentUser();
+    if (currentUser) {
+      setUser(currentUser);
     }
     setIsLoading(false);
-    console.log('AuthProvider initialization complete');
+
+    // Cleanup subscription
+    return unsubscribe;
   }, []);
 
-  const login = async (credentials: LoginCredentials): Promise<void> => {
-    console.log('Login attempt:', credentials);
-    setIsLoading(true);
-    
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    // Mock authentication - in real app, verify with backend
-    if (credentials.phone && credentials.otp === '1234') {
-      console.log('Login successful, setting user:', mockUser);
-      setUser(mockUser);
-      localStorage.setItem('user', JSON.stringify(mockUser));
-      console.log('User saved to localStorage');
-    } else {
-      console.log('Login failed - invalid credentials');
-      throw new Error('Invalid OTP. Please try 1234 for demo.');
+  const signInWithGoogle = async (): Promise<void> => {
+    try {
+      setIsLoading(true);
+      setError(null);
+      console.log('Starting Google sign-in...');
+      
+      const user = await authService.signInWithGoogle();
+      console.log('Google sign-in successful:', user);
+      
+      // User state will be updated automatically through the auth listener
+    } catch (error: any) {
+      console.error('Google sign-in failed:', error);
+      setError(error.message || 'Failed to sign in with Google');
+      throw error;
+    } finally {
+      setIsLoading(false);
     }
-    
-    setIsLoading(false);
   };
 
-  const register = async (data: RegisterData): Promise<void> => {
-    setIsLoading(true);
-    
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    // Create new user
-    const newUser: User = {
-      id: Date.now().toString(),
-      name: data.name,
-      email: data.email,
-      phone: data.phone,
-      city: data.city,
-      avatar: '👤'
-    };
-    
-    setUser(newUser);
-    localStorage.setItem('user', JSON.stringify(newUser));
-    setIsLoading(false);
+  const logout = async (): Promise<void> => {
+    try {
+      setError(null);
+      await authService.signOut();
+      console.log('Successfully logged out');
+      // User state will be updated automatically through the auth listener
+    } catch (error: any) {
+      console.error('Logout failed:', error);
+      setError(error.message || 'Failed to log out');
+      throw error;
+    }
   };
 
-  const logout = () => {
-    setUser(null);
-    localStorage.removeItem('user');
+  const updateProfile = async (updates: Partial<User>): Promise<void> => {
+    try {
+      setError(null);
+      await authService.updateUserProfile(updates);
+      console.log('Profile updated successfully');
+    } catch (error: any) {
+      console.error('Profile update failed:', error);
+      setError(error.message || 'Failed to update profile');
+      throw error;
+    }
+  };
+
+  const addEcoPoints = async (points: number): Promise<void> => {
+    try {
+      setError(null);
+      await authService.addEcoPoints(points);
+      console.log(`Added ${points} eco points successfully`);
+    } catch (error: any) {
+      console.error('Failed to add eco points:', error);
+      setError(error.message || 'Failed to add eco points');
+      throw error;
+    }
   };
 
   const isAuthenticated = !!user;
 
+  // Helper functions for UI components
+  const getUserDisplayName = (): string => {
+    if (!user) return 'Guest';
+    return user.displayName || user.name || user.email?.split('@')[0] || 'User';
+  };
+
+  const getUserInitials = (): string => {
+    if (!user) return 'G';
+    const name = user.displayName || user.name || user.email || '';
+    return name
+      .split(' ')
+      .map(word => word.charAt(0))
+      .join('')
+      .toUpperCase()
+      .slice(0, 2) || 'U';
+  };
+
+  const getUserAvatar = (): string | null => {
+    return user?.photoURL || null;
+  };
+
   return (
     <AuthContext.Provider value={{
       user,
-      login,
-      register,
+      signInWithGoogle,
       logout,
       isAuthenticated,
-      isLoading
+      isLoading,
+      error,
+      getUserDisplayName,
+      getUserInitials,
+      getUserAvatar,
+      updateProfile,
+      addEcoPoints
     }}>
       {children}
     </AuthContext.Provider>

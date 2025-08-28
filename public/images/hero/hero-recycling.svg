@@ -1,0 +1,119 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sky gradient background -->
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E0F6FF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="groundGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#90EE90;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#228B22;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#skyGradient)"/>
+  
+  <!-- Ground -->
+  <rect x="0" y="800" width="1920" height="280" fill="url(#groundGradient)"/>
+  
+  <!-- Buildings in background -->
+  <rect x="100" y="600" width="150" height="200" fill="#B0B0B0" rx="10"/>
+  <rect x="300" y="550" width="120" height="250" fill="#D3D3D3" rx="10"/>
+  <rect x="500" y="580" width="180" height="220" fill="#C0C0C0" rx="10"/>
+  
+  <!-- Recycling bins -->
+  <g id="recycling-bins">
+    <!-- Green bin -->
+    <rect x="800" y="750" width="80" height="100" fill="#228B22" rx="10"/>
+    <rect x="810" y="760" width="60" height="80" fill="#32CD32" rx="5"/>
+    <circle cx="840" cy="790" r="15" fill="white"/>
+    <path d="M830 785 L835 795 L845 795 L850 785 L845 780 L835 780 Z" fill="#228B22"/>
+    
+    <!-- Blue bin -->
+    <rect x="900" y="750" width="80" height="100" fill="#1E90FF" rx="10"/>
+    <rect x="910" y="760" width="60" height="80" fill="#4169E1" rx="5"/>
+    <circle cx="940" cy="790" r="15" fill="white"/>
+    <path d="M930 785 L935 795 L945 795 L950 785 L945 780 L935 780 Z" fill="#1E90FF"/>
+    
+    <!-- Yellow bin -->
+    <rect x="1000" y="750" width="80" height="100" fill="#FFD700" rx="10"/>
+    <rect x="1010" y="760" width="60" height="80" fill="#FFA500" rx="5"/>
+    <circle cx="1040" cy="790" r="15" fill="white"/>
+    <path d="M1030 785 L1035 795 L1045 795 L1050 785 L1045 780 L1035 780 Z" fill="#FFD700"/>
+  </g>
+  
+  <!-- Smart waste truck -->
+  <g id="smart-truck">
+    <rect x="1200" y="780" width="200" height="60" fill="#4169E1" rx="15"/>
+    <rect x="1210" y="790" width="180" height="40" fill="#1E90FF" rx="10"/>
+    <text x="1300" y="815" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">SMART WASTE</text>
+    
+    <!-- Wheels -->
+    <circle cx="1230" cy="860" r="25" fill="#2F2F2F"/>
+    <circle cx="1230" cy="860" r="15" fill="#4F4F4F"/>
+    <circle cx="1370" cy="860" r="25" fill="#2F2F2F"/>
+    <circle cx="1370" cy="860" r="15" fill="#4F4F4F"/>
+    
+    <!-- Cab -->
+    <rect x="1380" y="740" width="80" height="80" fill="#4169E1" rx="10"/>
+    <rect x="1385" y="750" width="70" height="30" fill="#87CEEB" rx="5"/>
+  </g>
+  
+  <!-- People sorting waste -->
+  <g id="people">
+    <!-- Person 1 -->
+    <circle cx="650" cy="780" r="25" fill="#FDBCB4"/>
+    <rect x="635" y="805" width="30" height="50" fill="#32CD32" rx="5"/>
+    <rect x="620" y="820" width="15" height="35" fill="#FDBCB4" rx="7"/>
+    <rect x="655" y="820" width="15" height="35" fill="#FDBCB4" rx="7"/>
+    <rect x="640" y="855" width="12" height="25" fill="#1E90FF" rx="6"/>
+    <rect x="648" y="855" width="12" height="25" fill="#1E90FF" rx="6"/>
+    
+    <!-- Person 2 -->
+    <circle cx="750" cy="780" r="25" fill="#D4A574"/>
+    <rect x="735" y="805" width="30" height="50" fill="#FFD700" rx="5"/>
+    <rect x="720" y="820" width="15" height="35" fill="#D4A574" rx="7"/>
+    <rect x="755" y="820" width="15" height="35" fill="#D4A574" rx="7"/>
+    <rect x="740" y="855" width="12" height="25" fill="#2F2F2F" rx="6"/>
+    <rect x="748" y="855" width="12" height="25" fill="#2F2F2F" rx="6"/>
+  </g>
+  
+  <!-- Solar panels on building -->
+  <rect x="520" y="570" width="140" height="8" fill="#1E90FF" rx="2"/>
+  <rect x="520" y="560" width="140" height="8" fill="#4169E1" rx="2"/>
+  
+  <!-- Trees -->
+  <circle cx="1600" cy="760" r="40" fill="#228B22"/>
+  <rect x="1590" y="780" width="20" height="40" fill="#8B4513" rx="3"/>
+  <circle cx="1700" cy="750" r="35" fill="#32CD32"/>
+  <rect x="1692" y="770" width="16" height="35" fill="#8B4513" rx="2"/>
+  
+  <!-- AI symbols -->
+  <g id="ai-elements">
+    <!-- Network nodes -->
+    <circle cx="1500" cy="400" r="8" fill="#00CED1" opacity="0.8"/>
+    <circle cx="1550" cy="420" r="6" fill="#00CED1" opacity="0.8"/>
+    <circle cx="1520" cy="450" r="7" fill="#00CED1" opacity="0.8"/>
+    <line x1="1500" y1="400" x2="1550" y2="420" stroke="#00CED1" stroke-width="2" opacity="0.6"/>
+    <line x1="1550" y1="420" x2="1520" y2="450" stroke="#00CED1" stroke-width="2" opacity="0.6"/>
+    <line x1="1520" y1="450" x2="1500" y2="400" stroke="#00CED1" stroke-width="2" opacity="0.6"/>
+  </g>
+  
+  <!-- Cloud with data -->
+  <ellipse cx="400" cy="200" rx="50" ry="30" fill="white" opacity="0.9"/>
+  <ellipse cx="420" cy="190" rx="40" ry="25" fill="white" opacity="0.9"/>
+  <ellipse cx="380" cy="190" rx="35" ry="25" fill="white" opacity="0.9"/>
+  <text x="400" y="205" text-anchor="middle" fill="#4169E1" font-family="Arial, sans-serif" font-size="12" font-weight="bold">CLOUD AI</text>
+  
+  <!-- Recycling symbols floating -->
+  <g transform="translate(1100,300) rotate(15)">
+    <circle cx="0" cy="0" r="20" fill="none" stroke="#228B22" stroke-width="3"/>
+    <path d="M-8 -8 L0 8 L8 -8 Z" fill="none" stroke="#228B22" stroke-width="2"/>
+  </g>
+  
+  <g transform="translate(300,350) rotate(-10)">
+    <circle cx="0" cy="0" r="18" fill="none" stroke="#1E90FF" stroke-width="3"/>
+    <path d="M-6 -6 L0 6 L6 -6 Z" fill="none" stroke="#1E90FF" stroke-width="2"/>
+  </g>
+</svg>

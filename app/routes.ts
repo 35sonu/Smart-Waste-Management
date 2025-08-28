@@ -1,14 +1,14 @@
 import { type RouteConfig, index, layout, route } from "@react-router/dev/routes";
 
 export default [
-  layout("layouts/main.tsx", [
-    index("routes/home.tsx"),
-    route("schedule", "routes/schedule.tsx"),
-    route("sort", "routes/sort.tsx"),
-    route("recycling-hubs", "routes/recycling-hubs.tsx"),
+  layout("layouts/main-simple.tsx", [
+    index("routes/home-beautiful.tsx"),
+    route("dashboard", "routes/dashboard-simple.tsx"),
+    route("schedule", "routes/schedule-beautiful.tsx"),
+    route("sort", "routes/sort-beautiful.tsx"),
+    route("hubs", "routes/hubs-beautiful.tsx"),
     route("route-optimizer", "routes/route-optimizer.tsx"),
-    route("rewards", "routes/rewards.tsx"),
-    route("dashboard", "routes/dashboard.tsx"),
+    route("rewards", "routes/rewards-beautiful.tsx"),
     route("admin", "routes/admin.tsx"),
   ]),
 ] satisfies RouteConfig;
