@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu } from "@headlessui/react";
+import { useTheme } from "../contexts/ThemeContext";
 import {
   Menu as MenuIcon,
   X,
@@ -45,12 +46,11 @@ interface TopBarProps {
 
 export default function TopBar({ onMobileMenuToggle }: TopBarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [theme, setTheme] = useState('light');
   const location = useLocation();
-  
-  const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
+  const { theme, toggleTheme } = useTheme();
   const isAuthenticated = false;
   const authLoading = false;
+  const logout = () => console.log('Sign out clicked');
   const getUserDisplayName = () => 'Guest';
   const getUserInitials = () => 'G';
   const getUserAvatar = () => null;
@@ -99,7 +99,7 @@ export default function TopBar({ onMobileMenuToggle }: TopBarProps) {
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled || !isHomePage
-          ? "bg-white/20 dark:bg-gray-900/20 backdrop-blur-2xl border-b border-white/30 dark:border-gray-700/30 shadow-2xl shadow-black/10 dark:shadow-black/50"
+          ? "bg-white/80 dark:bg-gray-900/80 backdrop-blur-2xl border-b border-white/30 dark:border-gray-700/30 shadow-2xl shadow-black/10 dark:shadow-black/50"
           : "bg-gradient-to-b from-black/10 to-transparent backdrop-blur-sm"
       }`}
     >
@@ -151,7 +151,9 @@ export default function TopBar({ onMobileMenuToggle }: TopBarProps) {
                   className={({ isActive: active }) => {
                     const baseClasses = "relative px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 flex items-center space-x-2 group";
                     const activeClasses = active
-                      ? "bg-white/20 backdrop-blur-sm text-white shadow-lg"
+                      ? (isScrolled || !isHomePage
+                          ? "text-green-700 dark:text-green-400 bg-green-50/80 dark:bg-green-900/20 shadow-lg"
+                          : "bg-white/20 backdrop-blur-sm text-white shadow-lg")
                       : isScrolled || !isHomePage
                         ? "text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 hover:bg-gray-100/50 dark:hover:bg-gray-800/50"
                         : "text-white/80 hover:text-white hover:bg-white/10";

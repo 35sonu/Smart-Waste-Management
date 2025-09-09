@@ -246,7 +246,7 @@ export default function HomeBeautiful() {
                 viewport={{ once: true }}
                 className="relative group"
               >
-                <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-3xl p-8 text-center shadow-xl border border-white/20 dark:border-gray-700/20 hover:shadow-2xl transition-all duration-300 group-hover:scale-105">
+                <div className="surface-elevated backdrop-blur-xl rounded-3xl p-8 text-center shadow-xl hover:shadow-2xl transition-all duration-300 group-hover:scale-105">
                   <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent dark:from-gray-700/40 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <stat.icon className={`mx-auto h-12 w-12 ${stat.color} mb-4 group-hover:scale-110 transition-transform duration-300`} />
                   <p className="text-4xl font-black text-gray-900 dark:text-white mb-2">{stat.value}</p>
@@ -297,7 +297,7 @@ export default function HomeBeautiful() {
                 transition={{ delay: index * 0.2, duration: 0.8 }}
                 className="group relative"
               >
-                <div className="relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-3xl p-8 lg:p-12 shadow-2xl border border-white/20 dark:border-gray-700/20 hover:shadow-3xl transition-all duration-500 overflow-hidden">
+                <div className="relative surface-elevated backdrop-blur-xl rounded-3xl p-8 lg:p-12 shadow-2xl hover:shadow-3xl transition-all duration-500 overflow-hidden">
                   {/* Background Gradient */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
                   

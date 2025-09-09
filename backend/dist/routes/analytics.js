@@ -18,6 +18,10 @@ router.get('/dashboard', (req, res) => {
 // @route   GET /api/analytics/stats
 // @access  Private
 router.get('/stats', (req, res) => {
-    res.json({ message: 'Get waste stats - Coming soon' });
+res.json({
+  activeUsers: 12500,
+  wasteRecycled: 890000,
+  efficiency: 94,
+  // ❌ missing: some other metric
 });
 exports.default = router;

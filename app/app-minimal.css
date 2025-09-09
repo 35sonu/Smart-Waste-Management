@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+/* Minimal CSS to prevent timeout issues */
+
+:root {
+  --color-background: #ffffff;
+  --color-foreground: #0f172a;
+}
+
+[data-theme="dark"] {
+  --color-background: #0f172a;
+  --color-foreground: #f8fafc;
+}
+
+html,
+body {
+  @apply bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100;
+  @apply font-sans antialiased;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Basic animations only */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Glassmorphism utility */
+.glass {
+  @apply backdrop-blur-lg bg-white/70 dark:bg-gray-900/70 border border-gray-200/50 dark:border-gray-700/50;
+}
+
+/* Basic button styles */
+.btn-primary {
+  @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-sm font-medium rounded-xl text-white bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 transition-all duration-200;
+}

@@ -8,9 +8,11 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/root";
-import "./app.css";
 
 export const links: Route.LinksFunction = () => [
+  // Load our Tailwind v4 build directly via a link tag to avoid SSR timeouts on large CSS modules
+  // Use BASE_URL so it works under GitHub Pages repo subpath
+  { rel: "stylesheet", href: import.meta.env.BASE_URL + "app/app-full.css" },
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
     rel: "preconnect",

@@ -19,7 +19,6 @@ import {
   Shield,
   UserCircle
 } from "lucide-react";
-import { useAuth } from "../contexts/AuthContext";
 
 // Navigation items
 const navigationItems = [
@@ -38,8 +37,18 @@ interface MobileNavigationProps {
 }
 
 export default function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
-  const { user, signInWithGoogle, logout, isAuthenticated, isLoading: authLoading, error, getUserDisplayName, getUserInitials, getUserAvatar } = useAuth();
   const location = useLocation();
+  
+  // Mock auth states and functions (replace these with actual auth when ready)
+  const user = null;
+  const signInWithGoogle = () => console.log('Sign in clicked');
+  const logout = () => console.log('Sign out clicked');
+  const isAuthenticated = false;
+  const authLoading = false;
+  const error = null;
+  const getUserDisplayName = () => 'Guest';
+  const getUserInitials = () => 'G';
+  const getUserAvatar = () => null;
 
   // Close navigation when route changes
   useEffect(() => {

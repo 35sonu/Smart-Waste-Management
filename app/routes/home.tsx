@@ -260,7 +260,7 @@ export default function Home() {
                   y: -5,
                   transition: { duration: 0.2 } 
                 }}
-                className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl p-6 md:p-8 text-center relative overflow-hidden group cursor-pointer hover:shadow-2xl"
+                className="surface-elevated rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl p-6 md:p-8 text-center relative overflow-hidden group cursor-pointer hover:shadow-2xl backdrop-blur-md"
               >
                 {/* Background gradient overlay */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${color.bg} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
