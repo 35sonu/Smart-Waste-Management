@@ -4,8 +4,8 @@ import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
-  // IMPORTANT: Set the base path for GitHub Pages deployment under /smart-waste-management/
-  base: "/smart-waste-management/",
+  // IMPORTANT: Set the base path for GitHub Pages deployment under /Smart-Waste-Management/
+  base: "/Smart-Waste-Management/",
   plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
   server: {
     hmr: {
