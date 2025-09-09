@@ -3,9 +3,9 @@ import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
-export default defineConfig({
-  // IMPORTANT: Set the base path for GitHub Pages deployment under /Smart-Waste-Management/
-  base: "/Smart-Waste-Management/",
+export default defineConfig(() => ({
+  // Dynamic base: "/" for SSR (Render). For GitHub Pages builds, set BUILD_BASE=/Smart-Waste-Management/
+  base: process.env.BUILD_BASE ?? "/",
   plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
   server: {
     hmr: {
@@ -32,4 +32,4 @@ export default defineConfig({
     ],
     force: true
   }
-});
+}));

@@ -17,3 +17,17 @@ services:
       - key: JWT_SECRET
         sync: false
 
+  - type: web
+    name: smart-waste-web
+    env: node
+    plan: free
+    rootDir: .
+    autoDeploy: true
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: BUILD_BASE
+        value: "/"
+
