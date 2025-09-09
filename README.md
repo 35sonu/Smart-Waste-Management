@@ -1,4 +1,4 @@
-# 🌱 EcoWaste Manager - Smart Waste Management System
+# 🌱 EcoWaste Manager — Smart Waste Management System
 
 [![React](https://img.shields.io/badge/React-18+-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5+-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -6,11 +6,13 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3+-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Vite](https://img.shields.io/badge/Vite-5+-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 
-> **Transform your city with AI-powered waste sorting, route optimization, and gamified recycling programs. Join 12.5K+ users making a difference.**
+> AI-powered waste sorting, route optimization, and gamified recycling.
 
-## 🚀 Live Demo
+## 🚀 Live URLs
 
-🌐 **[View Live Demo](https://your-username.github.io/smart-waste-frontend)**
+- Frontend (GitHub Pages): https://35sonu.github.io/Smart-Waste-Management
+- Repository: https://github.com/35sonu/Smart-Waste-Management
+- Backend API (Render): https://YOUR-RENDER-SERVICE.onrender.com  ← replace after deploy
 
 ## ✨ Features
 
@@ -89,69 +91,50 @@
 
 ### Installation
 
-1. **Clone the repository**
+1. Clone the repository
 ```bash
-git clone https://github.com/your-username/smart-waste-frontend.git
-cd smart-waste-frontend
+git clone https://github.com/35sonu/Smart-Waste-Management.git
+cd Smart-Waste-Management
 ```
 
-2. **Install dependencies**
+2. Install dependencies
 ```bash
 npm install
-# or
-yarn install
 ```
 
-3. **Start development server**
+3. Start development server
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-4. **Open your browser**
-```
-http://localhost:5173
-```
+4. Open your browser at http://localhost:5173
 
 ### 🔧 Available Scripts
 
 ```bash
-# Development
-npm run dev          # Start development server
-npm run build        # Build for production
-npm run preview      # Preview production build
-npm run lint         # Run ESLint
-npm run type-check   # Run TypeScript checks
-
-# Deployment
-npm run deploy       # Deploy to GitHub Pages
+npm run dev       # Start development server
+npm run build     # Build for production (build/client and build/server)
+npm run start     # Start server (uses react-router-serve)
+npm run typecheck # Type generation + TypeScript
 ```
 
 ## 📁 Project Structure
 
 ```
-smart-waste-frontend/
-├── 📁 app/                    # Application source code
-│   ├── 📁 components/         # Reusable UI components
-│   │   ├── InteractiveMap.tsx # Real-time map component
-│   │   ├── TopBar.tsx         # Modern navigation bar
-│   │   └── MobileNavigation.tsx
-│   ├── 📁 routes/            # Page components
-│   │   ├── home-beautiful.tsx # Modern homepage
-│   │   ├── hubs-beautiful.tsx # Interactive hubs page
-│   │   └── dashboard-simple.tsx
-│   ├── 📁 layouts/           # Layout components
-│   ├── 📁 contexts/          # React contexts
-│   ├── 📁 services/          # API services
-│   ├── 📁 lib/              # Utilities and configs
-│   ├── app.css              # Global styles
-│   ├── root.tsx             # App root component
-│   └── routes.ts            # Route configuration
-├── 📁 public/               # Static assets
-├── 📁 screenshots/          # Demo screenshots
-├── package.json             # Dependencies and scripts
-└── README.md               # Project documentation
+Smart-Waste-Management/
+├── app/                 # Application source (React Router)
+│   ├── routes/          # Routes and pages
+│   ├── components/      # UI components
+│   ├── app.css          # Global styles
+│   └── root.tsx         # App root
+├── public/              # Static assets
+├── backend/             # Express + MongoDB API
+│   ├── src/             # Source code (TS)
+│   └── dist/            # Compiled output
+├── .github/workflows/   # GitHub Pages deploy workflow
+├── render.yaml          # Render blueprint for backend deploy
+├── package.json         # Frontend scripts and deps
+└── vite.config.ts       # Vite config (base set for GH Pages)
 ```
 
 ## 🎨 Design System
@@ -185,23 +168,24 @@ This project promotes sustainability through:
 
 ## 🚀 Deployment
 
-### GitHub Pages (Automatic)
-This project is configured for automatic deployment to GitHub Pages:
+### Frontend — GitHub Pages (Automatic)
+- Push to the main branch to trigger the GitHub Actions workflow at .github/workflows/deploy.yml
+- Vite base is set to /Smart-Waste-Management/ to serve under the repo path
+- Live URL: https://35sonu.github.io/Smart-Waste-Management
 
-1. **Push to main branch** - Triggers automatic deployment
-2. **GitHub Actions** - Builds and deploys automatically
-3. **Live URL** - Available at `https://your-username.github.io/smart-waste-frontend`
+### Backend — Render (Blueprint)
+1) Create a free MongoDB Atlas cluster and get your mongodb+srv:// URI
+2) On render.com: New → Blueprint → select this repo → confirm render.yaml
+3) Set environment variables in the service:
+   - NODE_ENV=production
+   - FRONTEND_URL=https://35sonu.github.io/Smart-Waste-Management
+   - MONGODB_URI=your Atlas connection string
+   - JWT_SECRET=your-strong-secret
+4) Deploy. Verify health at /health and docs at /api
 
-### Manual Deployment
-```bash
-npm run build        # Build for production
-npm run deploy       # Deploy to GitHub Pages
-```
-
-### Other Platforms
-- **Vercel**: Connect your GitHub repo for automatic deployments
-- **Netlify**: Drag and drop the `dist` folder after building
-- **Firebase Hosting**: Use Firebase CLI for deployment
+### Environment variables
+- Frontend (.env): see ./.env.example
+- Backend (backend/.env): see backend/.env.example (use production values on Render)
 
 ## 📊 Performance
 
@@ -243,9 +227,8 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ## 📞 Contact & Support
 
-- **GitHub Issues**: [Create an issue](https://github.com/your-username/smart-waste-frontend/issues)
-- **Email**: your.email@example.com
-- **LinkedIn**: [Your LinkedIn Profile](https://linkedin.com/in/yourprofile)
+- Issues: https://github.com/35sonu/Smart-Waste-Management/issues
+- Email: work.sonukumar03@gmail.com
 
 ---
 
@@ -255,6 +238,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ⭐ **Star this repo if you found it helpful!** ⭐
 
-[🚀 Live Demo](https://your-username.github.io/smart-waste-frontend) • [🐛 Report Bug](https://github.com/your-username/smart-waste-frontend/issues) • [✨ Request Feature](https://github.com/your-username/smart-waste-frontend/issues)
+[🚀 Live Demo](https://35sonu.github.io/Smart-Waste-Management) • [🐛 Report Bug](https://github.com/35sonu/Smart-Waste-Management/issues) • [✨ Request Feature](https://github.com/35sonu/Smart-Waste-Management/issues)
 
 </div>
