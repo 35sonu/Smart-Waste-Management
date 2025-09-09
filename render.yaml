@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: smart-waste-api
+    env: node
+    plan: free
+    rootDir: backend
+    autoDeploy: true
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: FRONTEND_URL
+        value: https://35sonu.github.io/Smart-Waste-Management
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+
